@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+void decimalToBinary(int* n) {
+    char binary[32], *ptr = binary + 31;
+    *ptr = '\0';
+    do {
+        *(--ptr) = (*n % 2) + '0';
+        *n /= 2;
+    } while (*n > 0);
+    cout << ptr;
+}
+
+int main() {
+    int num;
+    cout << "Enter a decimal number: ";
+    cin >> num;
+    decimalToBinary(&num);
+    return 0;
+}
